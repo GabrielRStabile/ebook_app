@@ -1,20 +1,19 @@
+import 'package:ebook_app/presentation/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const EBookApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class EBookApp extends StatelessWidget {
+  const EBookApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'eBook',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: const AppTheme().toThemeData(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
