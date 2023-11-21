@@ -34,5 +34,6 @@ class HiveFavoriteBookModel extends HiveObject {
         author: author,
         coverUrl: coverUrl,
         downloadUrl: downloadUrl,
+        isFavorited: true,
       );
 }

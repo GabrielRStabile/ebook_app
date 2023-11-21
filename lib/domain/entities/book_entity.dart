@@ -4,6 +4,7 @@ class BookEntity {
   final String author;
   final String coverUrl;
   final String downloadUrl;
+  final bool isFavorited;
 
   BookEntity({
     required this.id,
@@ -11,6 +12,7 @@ class BookEntity {
     required this.author,
     required this.coverUrl,
     required this.downloadUrl,
+    this.isFavorited = false,
   });
 
   BookEntity copyWith({
@@ -19,6 +21,7 @@ class BookEntity {
     String? author,
     String? coverUrl,
     String? downloadUrl,
+    bool? isFavorited,
   }) {
     return BookEntity(
       id: id ?? this.id,
@@ -26,6 +29,7 @@ class BookEntity {
       author: author ?? this.author,
       coverUrl: coverUrl ?? this.coverUrl,
       downloadUrl: downloadUrl ?? this.downloadUrl,
+      isFavorited: isFavorited ?? this.isFavorited,
     );
   }
 
