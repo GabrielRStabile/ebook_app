@@ -1,19 +1,19 @@
-import 'package:ebook_app/domain/data/idelete_favorite_book.dart';
+import 'package:ebook_app/domain/data/idelete_favorite_book_data.dart';
 import 'package:ebook_app/domain/data/iget_books_data.dart';
-import 'package:ebook_app/domain/data/ipost_favorite_book.dart';
+import 'package:ebook_app/domain/data/ipost_favorite_book_data.dart';
 import 'package:ebook_app/domain/entities/book_entity.dart';
 import 'package:ebook_app/presentation/controllers/favorite_controller/ifavorite_controller.dart';
 import 'package:flutter/foundation.dart';
 
 class FavoriteController implements IFavoriteController {
   final IGetBooksData _getBooksData;
-  final IDeleteFavoriteBook _deleteFavoriteBook;
-  final IPostFavoriteBook _postFavoriteBook;
+  final IDeleteFavoriteBookData _deleteFavoriteBook;
+  final IPostFavoriteBookData _postFavoriteBook;
 
   FavoriteController({
     required IGetBooksData getBooksData,
-    required IDeleteFavoriteBook deleteFavoriteBook,
-    required IPostFavoriteBook postFavoriteBook,
+    required IDeleteFavoriteBookData deleteFavoriteBook,
+    required IPostFavoriteBookData postFavoriteBook,
   })  : _getBooksData = getBooksData,
         _deleteFavoriteBook = deleteFavoriteBook,
         _postFavoriteBook = postFavoriteBook;

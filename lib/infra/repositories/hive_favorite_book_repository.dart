@@ -1,12 +1,12 @@
-import 'package:ebook_app/domain/data/idelete_favorite_book.dart';
+import 'package:ebook_app/domain/data/idelete_favorite_book_data.dart';
 import 'package:ebook_app/domain/data/iget_books_data.dart';
-import 'package:ebook_app/domain/data/ipost_favorite_book.dart';
+import 'package:ebook_app/domain/data/ipost_favorite_book_data.dart';
 import 'package:ebook_app/domain/entities/book_entity.dart';
 import 'package:ebook_app/infra/models/hive_favorite_book_model.dart';
 import 'package:hive/hive.dart';
 
 class HiveFavoriteBookRepository
-    implements IGetBooksData, IDeleteFavoriteBook, IPostFavoriteBook {
+    implements IGetBooksData, IDeleteFavoriteBookData, IPostFavoriteBookData {
   static const boxName = 'favorites';
 
   static void registerAdapter() {

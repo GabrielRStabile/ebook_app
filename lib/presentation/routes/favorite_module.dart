@@ -1,6 +1,6 @@
-import 'package:ebook_app/domain/data/idelete_favorite_book.dart';
+import 'package:ebook_app/domain/data/idelete_favorite_book_data.dart';
 import 'package:ebook_app/domain/data/iget_books_data.dart';
-import 'package:ebook_app/domain/data/ipost_favorite_book.dart';
+import 'package:ebook_app/domain/data/ipost_favorite_book_data.dart';
 import 'package:ebook_app/infra/repositories/hive_favorite_book_repository.dart';
 import 'package:ebook_app/presentation/controllers/favorite_controller/favorite_controller.dart';
 import 'package:ebook_app/presentation/pages/favorite_page/favorite_page.dart';
@@ -11,8 +11,8 @@ class FavoriteModule extends Module {
   void binds(i) {
     //Repositories
     i.add<IGetBooksData>(HiveFavoriteBookRepository.new);
-    i.add<IPostFavoriteBook>(HiveFavoriteBookRepository.new);
-    i.add<IDeleteFavoriteBook>(HiveFavoriteBookRepository.new);
+    i.add<IPostFavoriteBookData>(HiveFavoriteBookRepository.new);
+    i.add<IDeleteFavoriteBookData>(HiveFavoriteBookRepository.new);
   }
 
   @override
