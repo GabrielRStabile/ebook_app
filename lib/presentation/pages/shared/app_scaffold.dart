@@ -1,19 +1,17 @@
 import 'package:ebook_app/presentation/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class AppScaffold extends StatefulWidget {
-  final String title;
-  final Widget body;
-
-  const AppScaffold({super.key, required this.title, required this.body});
+  const AppScaffold({super.key});
 
   @override
   State<AppScaffold> createState() => _AppScaffoldState();
 }
 
 class _AppScaffoldState extends State<AppScaffold> {
-  final int _currentIndex = 0;
+  int _currentIndex = 0;
 
   final destinations = {
     'Início': Icons.home_outlined,
@@ -45,10 +43,14 @@ class _AppScaffoldState extends State<AppScaffold> {
                   if (_currentIndex == index) return;
 
                   if (index == 0) {
-                    Navigator.popAndPushNamed(context, '/home/');
+                    Modular.to.navigate('/home/');
                   } else {
-                    Navigator.popAndPushNamed(context, '/favorite/');
+                    Modular.to.navigate('/favorite/');
                   }
+
+                  setState(() {
+                    _currentIndex = index;
+                  });
                 },
               ),
             ),
@@ -85,14 +87,14 @@ class _AppScaffoldState extends State<AppScaffold> {
                     statusBarIconBrightness: Brightness.dark,
                   ),
                   title: Text(
-                    widget.title,
+                    'Estante Virtual',
                     style: Theme.of(context)
                         .textTheme
                         .headlineMedium
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
-                body: widget.body,
+                body: const RouterOutlet(),
               ),
             ),
           ),
