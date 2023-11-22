@@ -13,15 +13,17 @@ class FavoriteModule extends Module {
     i.add<IGetBooksData>(HiveFavoriteBookRepository.new);
     i.add<IPostFavoriteBookData>(HiveFavoriteBookRepository.new);
     i.add<IDeleteFavoriteBookData>(HiveFavoriteBookRepository.new);
-  }
 
-  @override
-  void exportedBinds(i) {
+    //Controllers
     i.addSingleton<FavoriteController>(FavoriteController.new);
   }
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => const FavoritePage());
+    r.child(
+      '/',
+      child: (_) => const FavoritePage(),
+      transition: TransitionType.leftToRightWithFade,
+    );
   }
 }

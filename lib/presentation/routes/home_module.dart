@@ -20,6 +20,10 @@ class HomeModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => const HomePage());
+    r.child(
+      '/',
+      child: (_) => const HomePage(),
+      transition: TransitionType.rightToLeftWithFade,
+    );
   }
 }
